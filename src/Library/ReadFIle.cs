@@ -2,9 +2,9 @@ using System.IO;
 
 namespace PII_Game_Of_Life
 {
-    public class ReadFIle
+    public class ReadFile
     {
-        public bool[,] Read(FileType file)
+        public static bool[,] Read(FileType file)
         {
             
             string content = File.ReadAllText(file.Ruta);
@@ -20,7 +20,6 @@ namespace PII_Game_Of_Life
                     }
                 }
             }
-
             return board;
         }
     }
