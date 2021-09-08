@@ -47,6 +47,7 @@ namespace PII_Game_Of_Life
             }
 
             board.GameBoard = board.Cloneboard;
+            board.Cloneboard = new bool[board.BoardWidth, board.BoardHeight];
         }
     }
 }
