@@ -8,32 +8,27 @@ namespace PII_Game_Of_Life
     {
         public static void Print(Board board)
         {
-            while (true)
+            Console.Clear();
+
+            StringBuilder s = new StringBuilder();
+            for (int y = 0; y < board.BoardHeight; y++)
             {
-                Console.Clear();
-                StringBuilder s = new StringBuilder();
-                for (int y = 0; y<board.BoardHeight;y++)
+                for (int x = 0; x < board.BoardWidth; x++)
                 {
-                    for (int x = 0; x<board.BoardWidth; x++)
+                    if (board.GameBoard[x, y])
                     {
-                        if(board.GameBoard[x,y])
-                        {
-                            s.Append("|X|");
-                        }
-                        else
-                        {
-                            s.Append("___");
-                        }
+                        s.Append("|X|");
                     }
-                    s.Append("\n");
+                    else
+                    {
+                        s.Append("___");
+                    }
                 }
-                Console.WriteLine(s.ToString());
-                //=================================================
-                //Invocar método para calcular siguiente generación
-                //=================================================
-                Thread.Sleep(300);
+                s.Append("\n");
             }
-            // ReSharper disable once FunctionNeverReturns
+            Console.WriteLine(s.ToString());
+
+            Thread.Sleep(300);
         }
     }
 }

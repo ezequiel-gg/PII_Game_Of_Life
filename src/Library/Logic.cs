@@ -2,7 +2,7 @@ namespace PII_Game_Of_Life
 {
     public abstract class Logic
     {
-        public Board Game(Board board)
+        public static void Game(Board board)
         {
             for (int x = 0; x < board.BoardWidth; x++)
             {
@@ -46,7 +46,7 @@ namespace PII_Game_Of_Life
                 }
             }
 
-            return board;
+            board.GameBoard = board.Cloneboard;
         }
     }
 }
